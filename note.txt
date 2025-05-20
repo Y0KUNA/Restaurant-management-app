@@ -1,0 +1,10 @@
+1) Tổng quan về bài toán cần thêm khảo sát những nghiên cứu và sản phẩm liên quan đã thực hiện, từ đó xác định mục tiêu xử lý của hệ thống; 
+2) Mô hình tổng quan hệ thống cân thể hiện được vai trò các bên liên quan và phương thức kết nối giữa chúng; 
+3) Quy hoạch những nội dung liên quan tới biểu đồ lớp thuộc cùng hạng mục, 
+hiện tại các mục đồng cấp đưa ra nhưng cùng thuộc nội dung về biểu đồ lớp, 
+đặt tên hạng mục trùng lặp lan man nhiều mục; 
+4) Biểu đồ tuần tự thể hiện luồng xử lý phía trong hệ thống chưa bám theo kiến trúc phần mềm đề tài chọn MVC; 
+5) Kịch bản cần đưa ra trước biểu đồ tuần tự; 
+6) Biểu đồ lớp thiết kế cần đưa ra sau biểu đồ tuần tự sau khi khai thác thông tin gán được trách nhiệm cho lớp từ biểu đồ tuần
+tự; 
+7) Chưa có link github source code
