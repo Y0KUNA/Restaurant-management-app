@@ -1,6 +1,6 @@
 package View;
 
-import dao.UserDAO;
+import DAO.UserDAO;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import model.User;
@@ -120,10 +120,16 @@ public class LoginFrm extends javax.swing.JFrame {
 			if(ud.checkLogin(user)) {
 				if(user.getPosition().equalsIgnoreCase("Receptionist")) {
                                            this.dispose();
-					(new ReceptionistHomeFrm(new javax.swing.JFrame(), true, user)).setVisible(true);
+					(new ReceptionistHomeFrm(user)).setVisible(true);
 					
-				}else
-					JOptionPane.showMessageDialog(this, "The function of the role " + user.getPosition() + " is under construction!");
+				}else {
+                                    if(user.getPosition().equalsIgnoreCase("Manager")) {
+                                           this.dispose();
+					(new ManagerHomeFrm(user)).setVisible(true);
+					
+                                    }
+                                }
+					
 			}else {
 				JOptionPane.showMessageDialog(this, "Incorrect username and/or password!");
 			}

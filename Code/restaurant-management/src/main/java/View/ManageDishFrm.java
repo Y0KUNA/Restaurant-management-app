@@ -29,20 +29,35 @@ public class ManageDishFrm extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAddDish = new javax.swing.JButton();
+        btnEditDish = new javax.swing.JButton();
+        btnDeleteDish = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Dish management");
 
-        jButton1.setText("Add dish");
+        btnAddDish.setText("Add dish");
+        btnAddDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDishActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Edit dish");
+        btnEditDish.setText("Edit dish");
+        btnEditDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditDishActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Delete dish");
+        btnDeleteDish.setText("Delete dish");
+        btnDeleteDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteDishActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,11 +65,11 @@ public class ManageDishFrm extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnAddDish)
                 .addGap(30, 30, 30)
-                .addComponent(jButton2)
+                .addComponent(btnEditDish)
                 .addGap(30, 30, 30)
-                .addComponent(jButton3)
+                .addComponent(btnDeleteDish)
                 .addGap(44, 44, 44))
             .addGroup(layout.createSequentialGroup()
                 .addGap(114, 114, 114)
@@ -68,14 +83,31 @@ public class ManageDishFrm extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnAddDish)
+                    .addComponent(btnEditDish)
+                    .addComponent(btnDeleteDish))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDishActionPerformed
+        // TODO add your handling code here:
+         AddDishFrm addDialog = new AddDishFrm(this, true); // truyền this và true
+        addDialog.setLocationRelativeTo(this); // căn giữa form cha
+        addDialog.setVisible(true);
+    }//GEN-LAST:event_btnAddDishActionPerformed
+
+    private void btnEditDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDishActionPerformed
+        // TODO add your handling code here:
+        new SearchDishFrm(this, true, 1).setVisible(true);
+    }//GEN-LAST:event_btnEditDishActionPerformed
+
+    private void btnDeleteDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDishActionPerformed
+        // TODO add your handling code here:
+        new SearchDishFrm(this,true, 2).setVisible(true);
+    }//GEN-LAST:event_btnDeleteDishActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,24 +137,24 @@ public class ManageDishFrm extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                ManageDishFrm dialog = new ManageDishFrm(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                ManageDishFrm dialog = new ManageDishFrm(new javax.swing.JFrame(), true);
+//                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+//                    @Override
+//                    public void windowClosing(java.awt.event.WindowEvent e) {
+//                        System.exit(0);
+//                    }
+//                });
+//                dialog.setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnAddDish;
+    private javax.swing.JButton btnDeleteDish;
+    private javax.swing.JButton btnEditDish;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
